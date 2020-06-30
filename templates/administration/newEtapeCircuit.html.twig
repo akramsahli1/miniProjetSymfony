@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% block title %}Ajouter etape circuit{% endblock %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% block body %}
+
+    <style>
+        h2{color:cadetblue;text-align: center;font-weight: bold}
+    </style>
+
+    <div class="container">
+        <h2>Ajouter Etape Circuit</h2>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button class="btn btn-primary">Ajouter</button>
+        <button class="btn btn-secondary">
+            <a href="{{ path('etapeCircuit',{id: cir.id}) }}" style="color: white;" ><i class="fas fa-window-close"></i> Annuler</a>
+        </button>&nbsp&nbsp&nbsp
+        {{ form_end(form) }}
+    </div>
+
+
+{% endblock %}

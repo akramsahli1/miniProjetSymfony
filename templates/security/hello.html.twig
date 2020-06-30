@@ -1,0 +1,38 @@
+{% block body %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        body {
+            background-image: url('https://i2.wp.com/www.lechotouristique.com/wp-content/uploads/2020/05/adobestock_285186591.jpg?fit=713%2C477&ssl=1');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+        .position{
+            margin-top: 15%;
+            padding-left: 25%;
+        }
+        .position1{
+            margin-top: 100px;
+        }
+        .position2{
+            margin-top: 100px;
+            padding-left: 20%;
+        }
+    </style>
+<div class="container position">
+    <h1 class="text-primary">Bienvenue chez TourDSI22</h1>
+    {% if not app.user %}
+    <div class="container position1">
+        <div>
+            <a class="btn btn-secondary mr-4" href="/connexion">Entrer comme admin</a>
+            <a class="btn btn-secondary ml-4" href="{{ path('home') }}">Entrer comme visiteur</a>
+        </div>
+    </div>
+    {% else %}
+    <div class="container position2">
+            <a class="btn btn-secondary ml-4" href="{{ path('home') }}">Enter au site</a>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

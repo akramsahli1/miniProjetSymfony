@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier destination{% endblock %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% block body %}
+
+    <style>
+        h2{color:cadetblue;text-align: center;font-weight: bold}
+    </style>
+
+<div class="container">
+            <h2>Modifier Destination</h2>
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button class="btn btn-primary">Enregistrer</button>
+            <button class="btn btn-secondary">
+                <a href="{{ path('destination') }}" style="color: white;" ><i class="fas fa-window-close"></i> Annuler</a>
+            </button>&nbsp&nbsp&nbsp
+            {{ form_end(form) }}
+</div>
+
+{% endblock %}
